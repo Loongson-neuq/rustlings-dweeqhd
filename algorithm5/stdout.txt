@@ -1,0 +1,103 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:1:
+ /*
+-	bfs
+-	This problem requires you to implement a basic BFS algorithm
++    bfs
++    This problem requires you to implement a basic BFS algorithm
+ */
+ 
+ //I AM NOT DONE
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:8:
+ 
+ // Define a graph
+ struct Graph {
+-    adj: Vec<Vec<usize>>, 
++    adj: Vec<Vec<usize>>,
+ }
+ 
+ impl Graph {
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:21:
+ 
+     // Add an edge to the graph
+     fn add_edge(&mut self, src: usize, dest: usize) {
+-        self.adj[src].push(dest); 
+-        self.adj[dest].push(src); 
++        self.adj[src].push(dest);
++        self.adj[dest].push(src);
+     }
+ 
+     // Perform a breadth-first search on the graph, return the order of visited nodes
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:29:
+     fn bfs_with_return(&self, start: usize) -> Vec<usize> {
+-        
+-		//TODO
++        //TODO
+ 
+         let mut visit_order = vec![];
+         visit_order
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:35:
+     }
+ }
+ 
+-
+ #[cfg(test)]
+ mod tests {
+     use super::*;
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:84:
+         assert_eq!(visited_order, vec![0]);
+     }
+ }
+-
+ 
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+warning: unused import: `std::collections::VecDeque`
+ --> src/main.rs:7:5
+  |
+7 | use std::collections::VecDeque;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+error[E0601]: `main` function not found in crate `format_check`
+  --> src/main.rs:86:2
+   |
+86 | }
+   |  ^ consider adding a `main` function to `src/main.rs`
+
+warning: unused variable: `start`
+  --> src/main.rs:29:31
+   |
+29 |     fn bfs_with_return(&self, start: usize) -> Vec<usize> {
+   |                               ^^^^^ help: if this is intentional, prefix it with an underscore: `_start`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: variable does not need to be mutable
+  --> src/main.rs:33:13
+   |
+33 |         let mut visit_order = vec![];
+   |             ----^^^^^^^^^^^
+   |             |
+   |             help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` on by default
+
+For more information about this error, try `rustc --explain E0601`.
+warning: `format_check` (bin "format_check") generated 3 warnings
+error: could not compile `format_check` (bin "format_check") due to 1 previous error; 3 warnings emitted
+
+[!] Source code format check: FAILED

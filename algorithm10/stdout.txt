@@ -1,0 +1,69 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:1:
+ /*
+-	graph
+-	This problem requires you to implement a basic graph functio
++    graph
++    This problem requires you to implement a basic graph functio
+ */
+ // I AM NOT DONE
+ 
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:38:
+     fn adjacency_table(&self) -> &HashMap<String, Vec<(String, i32)>>;
+     fn add_node(&mut self, node: &str) -> bool {
+         //TODO
+-		true
++        true
+     }
+     fn add_edge(&mut self, edge: (&str, &str, i32)) {
+         //TODO
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:82:
+         }
+     }
+ }
++
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error[E0601]: `main` function not found in crate `format_check`
+  --> src/main.rs:84:2
+   |
+84 | }
+   |  ^ consider adding a `main` function to `src/main.rs`
+
+warning: unused variable: `edge`
+  --> src/main.rs:31:28
+   |
+31 |     fn add_edge(&mut self, edge: (&str, &str, i32)) {
+   |                            ^^^^ help: if this is intentional, prefix it with an underscore: `_edge`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `node`
+  --> src/main.rs:39:28
+   |
+39 |     fn add_node(&mut self, node: &str) -> bool {
+   |                            ^^^^ help: if this is intentional, prefix it with an underscore: `_node`
+
+warning: unused variable: `edge`
+  --> src/main.rs:43:28
+   |
+43 |     fn add_edge(&mut self, edge: (&str, &str, i32)) {
+   |                            ^^^^ help: if this is intentional, prefix it with an underscore: `_edge`
+
+For more information about this error, try `rustc --explain E0601`.
+warning: `format_check` (bin "format_check") generated 3 warnings
+error: could not compile `format_check` (bin "format_check") due to 1 previous error; 3 warnings emitted
+
+[!] Source code format check: FAILED

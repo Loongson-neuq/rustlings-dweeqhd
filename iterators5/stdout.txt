@@ -1,0 +1,51 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error[E0601]: `main` function not found in crate `format_check`
+   --> src/main.rs:156:2
+    |
+156 | }
+    |  ^ consider adding a `main` function to `src/main.rs`
+
+warning: unused variable: `map`
+  --> src/main.rs:35:19
+   |
+35 | fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
+   |                   ^^^ help: if this is intentional, prefix it with an underscore: `_map`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `value`
+  --> src/main.rs:35:52
+   |
+35 | fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
+   |                                                    ^^^^^ help: if this is intentional, prefix it with an underscore: `_value`
+
+warning: unused variable: `collection`
+  --> src/main.rs:53:30
+   |
+53 | fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
+   |                              ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_collection`
+
+warning: unused variable: `value`
+  --> src/main.rs:53:72
+   |
+53 | fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
+   |                                                                        ^^^^^ help: if this is intentional, prefix it with an underscore: `_value`
+
+For more information about this error, try `rustc --explain E0601`.
+warning: `format_check` (bin "format_check") generated 4 warnings
+error: could not compile `format_check` (bin "format_check") due to 1 previous error; 4 warnings emitted
+
+[!] Source code format check: FAILED

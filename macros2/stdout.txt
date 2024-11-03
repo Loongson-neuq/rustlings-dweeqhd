@@ -1,0 +1,38 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error: cannot find macro `my_macro` in this scope
+  --> src/main.rs:9:5
+   |
+9  |     my_macro!();
+   |     ^^^^^^^^ consider moving the definition of `my_macro` before this call
+   |
+note: a macro with the same name exists, but it appears later at here
+  --> src/main.rs:12:14
+   |
+12 | macro_rules! my_macro {
+   |              ^^^^^^^^
+
+warning: unused macro definition: `my_macro`
+  --> src/main.rs:12:14
+   |
+12 | macro_rules! my_macro {
+   |              ^^^^^^^^
+   |
+   = note: `#[warn(unused_macros)]` on by default
+
+warning: `format_check` (bin "format_check") generated 1 warning
+error: could not compile `format_check` (bin "format_check") due to 1 previous error; 1 warning emitted
+
+[!] Source code format check: FAILED

@@ -1,0 +1,49 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+error: expected identifier, found `{`
+  --> /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:32:39
+   |
+19 | impl Package {
+   |              - while parsing this item list starting here
+...
+32 |     fn is_international(&self) -> ??? {
+   |                                       ^ expected identifier
+...
+39 | }
+   | - the item list ends here
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error: expected identifier, found `{`
+  --> src/main.rs:32:39
+   |
+19 | impl Package {
+   |              - while parsing this item list starting here
+...
+32 |     fn is_international(&self) -> ??? {
+   |                                       ^ expected identifier
+...
+39 | }
+   | - the item list ends here
+
+error[E0601]: `main` function not found in crate `format_check`
+  --> src/main.rs:86:2
+   |
+86 | }
+   |  ^ consider adding a `main` function to `src/main.rs`
+
+For more information about this error, try `rustc --explain E0601`.
+error: could not compile `format_check` (bin "format_check") due to 2 previous errors
+
+[!] Source code format check: FAILED

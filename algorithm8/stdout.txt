@@ -1,0 +1,118 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:1:
+ /*
+-	queue
+-	This question requires you to use queues to implement the functionality of the stac
++    queue
++    This question requires you to use queues to implement the functionality of the stac
+ */
+ // I AM NOT DONE
+ 
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:52:
+     }
+ }
+ 
+-pub struct myStack<T>
+-{
+-	//TODO
+-	q1:Queue<T>,
+-	q2:Queue<T>
++pub struct myStack<T> {
++    //TODO
++    q1: Queue<T>,
++    q2: Queue<T>,
+ }
+ impl<T> myStack<T> {
+     pub fn new() -> Self {
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:63:
+         Self {
+-			//TODO
+-			q1:Queue::<T>::new(),
+-			q2:Queue::<T>::new()
++            //TODO
++            q1: Queue::<T>::new(),
++            q2: Queue::<T>::new(),
+         }
+     }
+     pub fn push(&mut self, elem: T) {
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:71:
+     }
+     pub fn pop(&mut self) -> Result<T, &str> {
+         //TODO
+-		Err("Stack is empty")
++        Err("Stack is empty")
+     }
+     pub fn is_empty(&self) -> bool {
+-		//TODO
++        //TODO
+         true
+     }
+ }
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:81:
+ 
+ #[cfg(test)]
+ mod tests {
+-	use super::*;
+-	
+-	#[test]
+-	fn test_queue(){
+-		let mut s = myStack::<i32>::new();
+-		assert_eq!(s.pop(), Err("Stack is empty"));
++    use super::*;
++
++    #[test]
++    fn test_queue() {
++        let mut s = myStack::<i32>::new();
++        assert_eq!(s.pop(), Err("Stack is empty"));
+         s.push(1);
+         s.push(2);
+         s.push(3);
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:100:
+         assert_eq!(s.pop(), Ok(1));
+         assert_eq!(s.pop(), Err("Stack is empty"));
+         assert_eq!(s.is_empty(), true);
+-	}
++    }
+ }
++
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+warning: type `myStack` should have an upper camel case name
+  --> src/main.rs:55:12
+   |
+55 | pub struct myStack<T>
+   |            ^^^^^^^ help: convert the identifier to upper camel case: `MyStack`
+   |
+   = note: `#[warn(non_camel_case_types)]` on by default
+
+error[E0601]: `main` function not found in crate `format_check`
+   --> src/main.rs:104:2
+    |
+104 | }
+    |  ^ consider adding a `main` function to `src/main.rs`
+
+warning: unused variable: `elem`
+  --> src/main.rs:69:28
+   |
+69 |     pub fn push(&mut self, elem: T) {
+   |                            ^^^^ help: if this is intentional, prefix it with an underscore: `_elem`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+For more information about this error, try `rustc --explain E0601`.
+warning: `format_check` (bin "format_check") generated 2 warnings
+error: could not compile `format_check` (bin "format_check") due to 1 previous error; 2 warnings emitted
+
+[!] Source code format check: FAILED

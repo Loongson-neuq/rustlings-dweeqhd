@@ -1,0 +1,49 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+error: expected expression, found `?`
+  --> /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:16:9
+   |
+16 |         ???
+   |         ^ expected expression
+
+error: expected expression, found `?`
+  --> /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:27:9
+   |
+27 |         ???
+   |         ^ expected expression
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error: expected expression, found `?`
+  --> src/main.rs:16:9
+   |
+16 |         ???
+   |         ^ expected expression
+
+error: expected expression, found `?`
+  --> src/main.rs:27:9
+   |
+27 |         ???
+   |         ^ expected expression
+
+error[E0601]: `main` function not found in crate `format_check`
+  --> src/main.rs:50:2
+   |
+50 | }
+   |  ^ consider adding a `main` function to `src/main.rs`
+
+For more information about this error, try `rustc --explain E0601`.
+error: could not compile `format_check` (bin "format_check") due to 3 previous errors
+
+[!] Source code format check: FAILED

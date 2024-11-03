@@ -1,0 +1,38 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error[E0601]: `main` function not found in crate `format_check`
+  --> src/main.rs:55:2
+   |
+55 | }
+   |  ^ consider adding a `main` function to `src/main.rs`
+
+error[E0308]: `if` and `else` have incompatible types
+  --> src/main.rs:15:9
+   |
+12 |       } else if animal == "snake" {
+   |  ____________-
+13 | |         3
+   | |         - expected because of this
+14 | |     } else {
+15 | |         "Unknown"
+   | |         ^^^^^^^^^ expected integer, found `&str`
+16 | |     };
+   | |_____- `if` and `else` have incompatible types
+
+Some errors have detailed explanations: E0308, E0601.
+For more information about an error, try `rustc --explain E0308`.
+error: could not compile `format_check` (bin "format_check") due to 2 previous errors
+
+[!] Source code format check: FAILED

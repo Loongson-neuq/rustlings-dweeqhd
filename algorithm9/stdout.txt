@@ -1,0 +1,72 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:1:
+ /*
+-	heap
+-	This question requires you to implement a binary heap function
++    heap
++    This question requires you to implement a binary heap function
+ */
+ // I AM NOT DONE
+ 
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:58:
+ 
+     fn smallest_child_idx(&self, idx: usize) -> usize {
+         //TODO
+-		0
++        0
+     }
+ }
+ 
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:85:
+ 
+     fn next(&mut self) -> Option<T> {
+         //TODO
+-		None
++        None
+     }
+ }
+ 
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:152:
+         assert_eq!(heap.next(), Some(2));
+     }
+ }
++
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error[E0601]: `main` function not found in crate `format_check`
+   --> src/main.rs:154:2
+    |
+154 | }
+    |  ^ consider adding a `main` function to `src/main.rs`
+
+warning: unused variable: `value`
+  --> src/main.rs:39:27
+   |
+39 |     pub fn add(&mut self, value: T) {
+   |                           ^^^^^ help: if this is intentional, prefix it with an underscore: `_value`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `idx`
+  --> src/main.rs:59:34
+   |
+59 |     fn smallest_child_idx(&self, idx: usize) -> usize {
+   |                                  ^^^ help: if this is intentional, prefix it with an underscore: `_idx`
+
+For more information about this error, try `rustc --explain E0601`.
+warning: `format_check` (bin "format_check") generated 2 warnings
+error: could not compile `format_check` (bin "format_check") due to 1 previous error; 2 warnings emitted
+
+[!] Source code format check: FAILED

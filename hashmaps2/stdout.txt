@@ -1,0 +1,49 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:81:
+         let count = basket.values().sum::<u32>();
+         assert!(count > 11);
+     }
+-    
++
+     #[test]
+     fn all_fruit_types_in_basket() {
+         let mut basket = get_fruit_basket();
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error[E0601]: `main` function not found in crate `format_check`
+  --> src/main.rs:93:2
+   |
+93 | }
+   |  ^ consider adding a `main` function to `src/main.rs`
+
+warning: unused variable: `fruit`
+  --> src/main.rs:39:9
+   |
+39 |     for fruit in fruit_kinds {
+   |         ^^^^^ help: if this is intentional, prefix it with an underscore: `_fruit`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `basket`
+  --> src/main.rs:30:17
+   |
+30 | fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
+   |                 ^^^^^^ help: if this is intentional, prefix it with an underscore: `_basket`
+
+For more information about this error, try `rustc --explain E0601`.
+warning: `format_check` (bin "format_check") generated 2 warnings
+error: could not compile `format_check` (bin "format_check") due to 1 previous error; 2 warnings emitted
+
+[!] Source code format check: FAILED

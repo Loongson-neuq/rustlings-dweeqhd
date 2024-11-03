@@ -1,0 +1,68 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+warning: unneeded unit return type
+  --> src/main.rs:35:22
+   |
+35 | fn result_with_list() -> () {
+   |                      ^^^^^^ help: remove the `-> ()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unused_unit
+   = note: `#[warn(clippy::unused_unit)]` on by default
+
+warning: unneeded unit return type
+  --> src/main.rs:43:21
+   |
+43 | fn list_of_results() -> () {
+   |                     ^^^^^^ help: remove the `-> ()`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#unused_unit
+
+error[E0601]: `main` function not found in crate `format_check`
+  --> src/main.rs:90:2
+   |
+90 | }
+   |  ^ consider adding a `main` function to `src/main.rs`
+
+warning: unused variable: `a`
+  --> src/main.rs:28:15
+   |
+28 | pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
+   |               ^ help: if this is intentional, prefix it with an underscore: `_a`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `b`
+  --> src/main.rs:28:23
+   |
+28 | pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
+   |                       ^ help: if this is intentional, prefix it with an underscore: `_b`
+
+warning: unused variable: `division_results`
+  --> src/main.rs:37:9
+   |
+37 |     let division_results = numbers.into_iter().map(|n| divide(n, 27));
+   |         ^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_division_results`
+
+warning: unused variable: `division_results`
+  --> src/main.rs:45:9
+   |
+45 |     let division_results = numbers.into_iter().map(|n| divide(n, 27));
+   |         ^^^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_division_results`
+
+For more information about this error, try `rustc --explain E0601`.
+warning: `format_check` (bin "format_check") generated 6 warnings
+error: could not compile `format_check` (bin "format_check") due to 1 previous error; 6 warnings emitted
+
+[!] Source code format check: FAILED

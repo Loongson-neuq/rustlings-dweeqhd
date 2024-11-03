@@ -1,0 +1,53 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+Diff in /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:31:
+     // TODO: Fill your safety notice of the code block below to match your
+     // code's behavior and the contract of this function. You may use the
+     // comment of the test below as your format reference.
+-    unsafe {
+-        todo!("Your code goes here")
+-    }
++    unsafe { todo!("Your code goes here") }
+ }
+ 
+ #[cfg(test)]
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error[E0601]: `main` function not found in crate `format_check`
+  --> src/main.rs:51:2
+   |
+51 | }
+   |  ^ consider adding a `main` function to `src/main.rs`
+
+warning: unused variable: `address`
+  --> src/main.rs:30:29
+   |
+30 | unsafe fn modify_by_address(address: usize) {
+   |                             ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_address`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: unnecessary `unsafe` block
+  --> src/main.rs:34:5
+   |
+34 |     unsafe {
+   |     ^^^^^^ unnecessary `unsafe` block
+   |
+   = note: `#[warn(unused_unsafe)]` on by default
+
+For more information about this error, try `rustc --explain E0601`.
+warning: `format_check` (bin "format_check") generated 2 warnings
+error: could not compile `format_check` (bin "format_check") due to 1 previous error; 2 warnings emitted
+
+[!] Source code format check: FAILED

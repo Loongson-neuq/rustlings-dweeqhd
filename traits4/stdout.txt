@@ -1,0 +1,56 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+error: expected identifier, found `,`
+  --> /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:26:38
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                      ^ expected identifier
+   |
+help: remove this comma
+   |
+26 - fn compare_license_types(software: ??, software_two: ??) -> bool {
+26 + fn compare_license_types(software: ?? software_two: ??) -> bool {
+   |
+
+error: expected a trait, found type
+  --> /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:26:37
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                     ^^^^^^^^^^^^^^^
+
+error: expected identifier, found `)`
+  --> /home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check/src/main.rs:26:56
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                                        ^ expected identifier
+
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error: expected identifier, found `,`
+  --> src/main.rs:26:38
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                                      ^ expected identifier
+   |
+help: remove this comma
+   |
+26 - fn compare_license_types(software: ??, software_two: ??) -> bool {
+26 + fn compare_license_types(software: ?? software_two: ??) -> bool {
+   |
+
+error: expected a trait, found type
+  --> src/main.rs:26:37
+   |
+26 | fn compare_license_types(software: ??, software_two: ??) -> bool {
+   |                        

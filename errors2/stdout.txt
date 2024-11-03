@@ -1,0 +1,38 @@
+Checking test execution result...
+[!] Test execution result: FAILED
+Checking source code format...
+  Preparing source code for format check...
+  Running format check...
+// =====================================================
+//  Running cargo fmt...
+// =====================================================
+
+// =====================================================
+//    Running cargo clippy...
+// =====================================================
+
+    Checking format_check v0.1.0 (/home/runner/work/rustlings-dweeqhd/rustlings-dweeqhd/format_check)
+error[E0601]: `main` function not found in crate `format_check`
+  --> src/main.rs:50:2
+   |
+50 | }
+   |  ^ consider adding a `main` function to `src/main.rs`
+
+error[E0369]: cannot multiply `std::result::Result<i32, std::num::ParseIntError>` by `{integer}`
+  --> src/main.rs:31:12
+   |
+31 |     Ok(qty * cost_per_item + processing_fee)
+   |        --- ^ ------------- {integer}
+   |        |
+   |        std::result::Result<i32, std::num::ParseIntError>
+   |
+note: the foreign item type `std::result::Result<i32, std::num::ParseIntError>` doesn't implement `std::ops::Mul<{integer}>`
+  --> /rustc/f6e511eec7342f59a25f7c0534f1dbea00d01b14/library/core/src/result.rs:527:1
+   |
+   = note: not implement `std::ops::Mul<{integer}>`
+
+Some errors have detailed explanations: E0369, E0601.
+For more information about an error, try `rustc --explain E0369`.
+error: could not compile `format_check` (bin "format_check") due to 2 previous errors
+
+[!] Source code format check: FAILED
